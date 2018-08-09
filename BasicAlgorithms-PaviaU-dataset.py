@@ -11,7 +11,7 @@ Classical algorithms implemented: dectree,svm,ranfor,lle
 '''
 
 
-from keras.layers import Dense, Dropout, Conv1D, MaxPooling1D,Flatten,Reshape
+from keras.layers import Dense, Dropout, Conv1D, MaxPooling1D,Flatten,Reshape,Conv2D,MaxPool2D
 import scipy.io
 import numpy as np
 from keras.utils.vis_utils import plot_model
@@ -48,16 +48,18 @@ def nn(DIMENSIONS):
 
 def cnn():
     model = Sequential()
+
     model.add(Conv1D(filters=20, kernel_size=11, input_shape = (103, 1), activation='tanh'))
     model.add(MaxPooling1D(pool_size=(3)))
     model.add(Flatten())
     model.add(Dense(100, activation='tanh'))
+
     model.add(Dense(9, activation='softmax'))
 
     return model
 
-paviaU=np.array(scipy.io.loadmat('datasets/paviaU.mat')['paviaU'])
-paviaUgt=np.array(scipy.io.loadmat('datasets/paviaU_gt.mat')['paviaU_gt'])-1
+paviaU=np.array(scipy.io.loadmat('datasets/PaviaU.mat')['paviaU'])
+paviaUgt=np.array(scipy.io.loadmat('datasets/PaviaU_gt.mat')['paviaU_gt'])-1
 
 paviaU=paviaU.reshape([paviaU.shape[0]*paviaU.shape[1],paviaU.shape[2]])
 paviaUgt=paviaUgt.reshape((paviaUgt.shape[0]*paviaUgt.shape[1],1))
