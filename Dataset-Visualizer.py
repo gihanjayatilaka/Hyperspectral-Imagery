@@ -27,4 +27,3 @@ classVar=np.ndarray(((CLASSES.shape[0],X.shape[2])))
 
 
 
-
