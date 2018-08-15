@@ -18,12 +18,20 @@ Y=np.array(spio.loadmat(labelsFileName)[labelsMatName])
 Y.reshape((Y.shape[0]*Y.shape[1]))
 
 
-CLASSES=np.unique(Y)
-
-classMean=np.ndarray((CLASSES.shape[0],X.shape[2]))
-classVar=np.ndarray(((CLASSES.shape[0],X.shape[2])))
 
 
+classLabels=np.unique(Y)
+noOfClasses=classLabels.shape[0]
 
+numberToLabel=classLabels
+labelToNumber=np.zeros(shape=(np.max(classLabels)),dtype=np.int32)
+for i in range(classLabels.shape[0]):
+    labelToNumber[classLabels[i]]=i
 
+Y[:]=labelToNumber[Y[:]]
+for i in
+
+classMean=np.zeros(shape=(classLabels.shape[0],X.shape[2]),dtype=np.float32)
+classVar=np.zeros(shape=(classLabels.shape[0],X.shape[2]),dtype=np.float32)
+classCount=np.zeros(shape=(classLabels))
 
