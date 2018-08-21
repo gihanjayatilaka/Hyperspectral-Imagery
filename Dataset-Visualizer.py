@@ -2,7 +2,7 @@
 Dataset Visualizer for HSI images
 
 gihanjayatilaka@eng.pdn.ac.lk wrote this code. But if you find a bug you should notify harshana.w@eng.pdn.ac.lk
-        because Gihan is lazy to debug!
+        because Harshana is the best debugger we know!
 
 Ex:
 python .\Dataset-Visualizer.py .\datasets\Botswana.mat Botswana .\datasets\Botswana_gt.mat Botswana_gt

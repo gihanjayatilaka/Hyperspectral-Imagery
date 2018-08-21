@@ -1,4 +1,9 @@
 '''
+Basic Algorithms for HSI dataset classification
+
+gihanjayatilaka@eng.pdn.ac.lk wrote this code. But if you find a bug you should notify harshana.w@eng.pdn.ac.lk
+        because Harshana is the best debugger we know!
+
 USAGE:
 python BasicAlgorithms-PaviaU-dataset.py TRAINING_SAMPLE_SIZE EPOCHS ALGORITHM
 python BasicAlgorithms-PaviaU-dataset.py 500 100 cnn
