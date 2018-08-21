@@ -8,8 +8,9 @@ Ex:
 python .\Dataset-Visualizer.py .\datasets\Botswana.mat Botswana .\datasets\Botswana_gt.mat Botswana_gt
 python .\Dataset-Visualizer.py .\datasets\KSC.mat KSC .\datasets\KSC_gt.mat KSC_gt
 python .\Dataset-Visualizer.py .\datasets\PaviaU.mat paviaU .\datasets\PaviaU_gt.mat paviaU_gt
-
-
+python .\Dataset-Visualizer.py .\datasets\Indian_pines_corrected.mat indian_pines_corrected .\datasets\Indian_pines_gt.mat indian_pines_gt
+python .\Dataset-Visualizer.py .\datasets\Salinas_corrected.mat salinas_corrected .\datasets\Salinas_gt.mat salinas_gt
+python .\Dataset-Visualizer.py .\datasets\SalinasA_corrected.mat salinasA_corrected .\datasets\SalinasA_gt.mat salinasA_gt
 '''
 
 
@@ -44,16 +45,17 @@ noOfDimensions=X.shape[1]
 numberToLabel=classLabels
 labelToNumber=np.zeros(shape=(np.max(classLabels)+1),dtype=np.int32)
 
+
 #print(classLabels,labelToNumber)
 for i in range(classLabels.shape[0]):
     labelToNumber[classLabels[i]]=i
+print("Number to label",numberToLabel,"Label to number",labelToNumber)
 
 
 for i in range(Y.shape[0]):
     Y[i]=labelToNumber[Y[i]]
 
 
-Y[:]=labelToNumber[Y[:]]
 
 classMean=np.zeros(shape=(classLabels.shape[0],X.shape[1]),dtype=np.float32)
 classVar=np.zeros(shape=(classLabels.shape[0],X.shape[1]),dtype=np.float32)
