@@ -8,6 +8,7 @@ USAGE:
 python BasicAlgorithms-PaviaU-dataset.py TRAINING_SAMPLE_SIZE EPOCHS ALGORITHM
 python BasicAlgorithms-PaviaU-dataset.py 500 100 cnn
 python BasicAlgorithms-PaviaU-dataset.py 250 0 svm
+python BasicAlgorithms-PaviaU-dataset.py 250 0 gnb
 
 
 Note: EPOCHS are useful only for neural networks.
@@ -205,6 +206,14 @@ else:
         clf = RandomForestClassifier(max_depth=50, random_state=0)
         clf.fit(Xtrain, Ytrain.ravel())
         pre = clf.predict(X)
+    elif sys.argv[3]=='gnb':
+        from sklearn.naive_bayes import GaussianNB
+
+        gnb = GaussianNB()
+        Ytrain=Ytrain.reshape((Ytrain.shape[0],))
+
+        model=gnb.fit(Xtrain,Ytrain)
+        pre = model.predict(X)
 
 
 
